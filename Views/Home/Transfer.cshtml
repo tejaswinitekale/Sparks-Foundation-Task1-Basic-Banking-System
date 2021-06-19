@@ -1,0 +1,47 @@
+﻿@model BankingApp.Models.tblCustomer
+
+@{
+    ViewBag.Title = "Transfer";
+}
+
+<h2 style=" font-weight:bold; font-family:'Times New Roman';font-size:40px;color:black">Transfer</h2>
+
+
+<table>
+    @using (Html.BeginForm("Transfer2", "Home", FormMethod.Post))
+    {
+        <tr>
+            <td>From:</td>
+            <td>
+                <select id="fromTransfer" name="fromTransfer">
+                    <option value="@Model.Id">@Model.Name</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>To:</td>
+            <td>
+                <select id="toTransfer" name="toTransfer">
+                    @foreach (var customer in ViewBag.CustomersList)
+                    {
+                        <option value="@customer.Id">@customer.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Amount:</td>
+            <td>
+                <input type="number" id="amount" name="amount" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Transfer" onclick="alert('Transfer Successfully')" />
+            </td>
+        </tr>
+        
+    }
+</table>
+

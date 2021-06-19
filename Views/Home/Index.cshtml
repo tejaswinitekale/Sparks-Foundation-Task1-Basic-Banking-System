@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Customers";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1  style="font-weight: bolder;
+        font-size: 70px;
+        color: black;
+        font-style: inherit;
+        font-family: 'Times New Roman'"  align="center">THE SPARKS BANK</h1>
+<hr />
+<div style="text-size-adjust:60px; text-align:center;font-family:'Times New Roman'">
+    @using (Html.BeginForm("Customers", "Home", FormMethod.Post))
+    {
+        <input class="btn btn-success" type="submit" value="View All Customers" />
+        
+    }
+</div>
